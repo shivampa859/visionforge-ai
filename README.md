@@ -3,7 +3,6 @@
 VisionForge is a deep learning-based image classification web application built using ResNet-18 and trained on the CIFAR-10 dataset. The project integrates a PyTorch-trained model with a Django backend and a modern frontend interface.
 This application allows users to upload an image and receive real-time classification predictions through a deployed AI system.
 
----
 
 ## Project Overview
 - This project demonstrates:
@@ -13,7 +12,6 @@ This application allows users to upload an image and receive real-time classific
 - 	Deployment-ready Django backend
 - 	Modern frontend interface with structured UI flow
 
---
 
 ## Model Details:
 - Architecture: ResNet-18 (modified for CIFAR-10)
@@ -24,8 +22,7 @@ This application allows users to upload an image and receive real-time classific
 - Loss Function: CrossEntropyLoss with label smoothing
 - Optimizer: SGD with Momentum
 - Scheduler: Cosine Annealing
-
---
+  
 
 ## Supported Classes
 - The model recognizes the following CIFAR-10 categories:
@@ -50,8 +47,7 @@ This application allows users to upload an image and receive real-time classific
 - CSS3
 - Gunicorn
 - WhiteNoise
-
---
+- 
 
 ## Project Structure:
 - cifar10_project/
@@ -84,7 +80,6 @@ This application allows users to upload an image and receive real-time classific
   Visit:
   http://127.0.0.1:8000/
 
---
 
 ## Deployment:
 - This project is deployed using Render.
@@ -102,7 +97,6 @@ This application allows users to upload an image and receive real-time classific
 -  Managing static and media files in production
 -  Handling cloud deployment for AI applications
 
---
 
  ## Author
 - Shivam Patel
