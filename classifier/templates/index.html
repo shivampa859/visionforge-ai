@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VisionForge — Powered by ResNet</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1> VisionForge</h1>
+    <p class="subtitle">ResNet-Powered AI Vision Engine</p>
+
+    <!-- Accuracy Badge -->
+    <div class="accuracy-badge">
+        Validation Accuracy: <strong>93.7%</strong>
+    </div>
+
+    <!-- Supported Classes Toggle -->
+    <div class="class-section">
+        <button onclick="toggleClasses()" class="info-btn">
+             Supported Classes ▼
+        </button>
+
+        <div id="classList" class="class-grid">
+            <div class="class-card">✈ Airplane</div>
+            <div class="class-card">🚗 Automobile</div>
+            <div class="class-card">🐦 Bird</div>
+            <div class="class-card">🐱 Cat</div>
+            <div class="class-card">🦌 Deer</div>
+            <div class="class-card">🐶 Dog</div>
+            <div class="class-card">🐸 Frog</div>
+            <div class="class-card">🐴 Horse</div>
+            <div class="class-card">🚢 Ship</div>
+            <div class="class-card">🚚 Truck</div>
+        </div>
+    </div>
+
+    <!-- Upload Form -->
+    <form method="POST" enctype="multipart/form-data" class="upload-form">
+        {% csrf_token %}
+        <input type="file" name="image" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result-card">
+        <h2>Prediction: <span>{{ prediction }}</span></h2>
+        <img src="{{ image_url }}">
+    </div>
+    {% endif %}
+
+    <!-- Model Info Button -->
+    <button class="model-info-btn" onclick="openModal()">About Model</button>
+
+</div>
+
+<!-- Modal -->
+<div id="modelModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Model Information</h2>
+        <ul>
+            <li><strong>Architecture:</strong> ResNet-18</li>
+            <li><strong>Dataset:</strong> CIFAR-10</li>
+            <li><strong>Validation Accuracy:</strong> 93.7%</li>
+            <li><strong>Supported Classes:</strong> 10</li>
+            <li class="tooltip">
+                <strong>Note:</strong> Model only recognizes CIFAR-10 categories.
+                <span class="tooltiptext">It will not perform well on unrelated real-world objects.</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+function toggleClasses() {
+    document.getElementById("classList").classList.toggle("show");
+}
+
+function openModal() {
+    document.getElementById("modelModal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("modelModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById("modelModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>

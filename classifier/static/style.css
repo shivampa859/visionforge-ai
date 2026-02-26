@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 420px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+/* Accuracy Badge */
+.accuracy-badge {
+    background: rgba(0,0,0,0.2);
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+/* Toggle Button */
+.info-btn {
+    background: transparent;
+    border: 1px solid white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+
+.info-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Class Grid */
+.class-grid {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s ease;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.class-grid.show {
+    max-height: 300px;
+    margin-bottom: 15px;
+}
+
+.class-card {
+    background: rgba(255,255,255,0.2);
+    padding: 8px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.class-card:hover {
+    background: #ff7eb3;
+    transform: scale(1.05);
+}
+
+/* Upload */
+.upload-form input {
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #ff7eb3;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff4f91;
+    transform: scale(1.05);
+}
+
+/* Result */
+.result-card {
+    margin-top: 20px;
+}
+
+.result-card span {
+    color: #ffdd59;
+    font-weight: bold;
+}
+
+.result-card img {
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    color: black;
+    padding: 25px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: left;
+    animation: fadeIn 0.3s ease;
+}
+
+.close-btn {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.9);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+/* Tooltip */
+.tooltip {
+    position: relative;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    background: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 200px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

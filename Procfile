@@ -1,0 +1,1 @@
+web: gunicorn cifar10_project.wsgi
